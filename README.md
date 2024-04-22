@@ -1,4 +1,3 @@
-
 # JSON File Format Verification
 
 The `verify_iam_role_policy` function allows you to check the validity of a JSON file containing an IAM (Identity and Access Management) policy in Amazon Web Services (AWS). This tool is useful for developers and AWS administrators to ensure that JSON files defining IAM policies are correctly formatted and meet AWS requirements.
@@ -46,7 +45,7 @@ The project includes a comprehensive set of unit tests designed to validate the 
 
 **Testing Data:**
 
-In addition to predefined test scenarios, the tests utilize JSON files located in the `json_test_files` folder. These files contain various IAM policy configurations, allowing for more extensive testing beyond what's defined directly in the test code. By incorporating external files, the tests cover a broader range of real-world scenarios and edge cases.
+In addition to predefined test scenarios, the tests utilize JSON files located in the `json_test_files` folder. By incorporating external files, the tests cover a broader range of real-world scenarios and edge cases.
 
 **Executing Tests:**
 
