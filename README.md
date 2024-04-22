@@ -21,7 +21,7 @@ result = verify_iam_role_policy(json_file)
 print("Verification result:", result)
 ```
 
-**Running Tests with pytest:**
+## Running Tests with pytest
 
 The project includes a comprehensive set of unit tests designed to validate the `verify_iam_role_policy` function under various scenarios. These tests cover both expected and edge cases to ensure robustness and reliability.
 
