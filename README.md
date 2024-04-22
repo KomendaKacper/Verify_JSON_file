@@ -22,20 +22,42 @@ result = verify_iam_role_policy(json_file)
 print("Verification result:", result)
 ```
 
-### Running Tests with pytest
+**Running Tests with pytest:**
 
-The project also includes unit tests written using pytest. To run the tests, follow these steps:
+The project includes a comprehensive set of unit tests designed to validate the `verify_iam_role_policy` function under various scenarios. These tests cover both expected and edge cases to ensure robustness and reliability.
 
-1. Ensure you have pytest installed:
+**Types of Tests:**
 
-```bash
-pip install pytest
-```
+1. **Basic JSON Structure:**
+   - Test scenarios where the JSON file is missing required fields like "PolicyName" or "PolicyDocument".
+   - Examples include checking for missing fields, invalid formats, or incorrect lengths.
+
+2. **Policy Document Validation:**
+   - Tests ensuring the correct format and structure of the "PolicyDocument" field.
+   - Verifies that the "PolicyDocument" contains the necessary fields like "Version" and "Statement".
+
+3. **Statement Validation:**
+   - Tests focusing on the individual statements within the "PolicyDocument".
+   - Verifies that each statement follows the correct format and contains essential components like "Effect", "Action", and "Resource".
+
+4. **Specific Conditions:**
+   - Tests for specific conditions, such as statements containing a single asterisk (*) in the "Resource" field.
+   - These tests address unique requirements or constraints specified by AWS IAM policies.
+
+**Testing Data:**
+
+In addition to predefined test scenarios, the tests utilize JSON files located in the `json_test_files` folder. These files contain various IAM policy configurations, allowing for more extensive testing beyond what's defined directly in the test code. By incorporating external files, the tests cover a broader range of real-world scenarios and edge cases.
+
+**Executing Tests:**
+
+1. Ensure pytest is installed:
+   ```
+   pip install pytest
+   ```
 
 2. Run the tests using pytest:
+   ```
+   pytest tests.py
+   ```
 
-```bash
-pytest tests.py
-```
-
-After completing these steps, pytest will test the `verify_iam_role_policy` function for various use cases and return the test results.
+After running the tests, pytest will provide detailed feedback on each test case, including pass/fail status and any relevant error messages or exceptions encountered during execution. This comprehensive testing approach ensures the reliability and accuracy of the `verify_iam_role_policy` function across a variety of input scenarios.
